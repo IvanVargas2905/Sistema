@@ -184,6 +184,8 @@ function attachModalEvents() {
  */
 function openActionModal(actionNumber, title) {
     const modalTitle = document.getElementById('modalTitle');
+    const deleteBatchForm = document.getElementById('deleteBatchForm');
+    const deleteHistoryForm = document.getElementById('deleteHistoryForm');
     const movePiecesForm = document.getElementById('movePiecesForm');
     const modalResult = document.getElementById('modalResult');
 
@@ -194,13 +196,24 @@ function openActionModal(actionNumber, title) {
     modalResult.style.display = 'none';
     modalResult.textContent = '';
 
-    // Mostrar formulario si es necesario
-    if (actionNumber === 3) {
+    // Ocultar todos los formularios
+    deleteBatchForm.style.display = 'none';
+    deleteHistoryForm.style.display = 'none';
+    movePiecesForm.style.display = 'none';
+
+    // Mostrar formulario correspondiente
+    if (actionNumber === 1) {
+        // Acción: Eliminar caja
+        deleteBatchForm.style.display = 'block';
+        document.getElementById('batchId').value = '';
+    } else if (actionNumber === 2) {
+        // Acción: Borrar historial
+        deleteHistoryForm.style.display = 'block';
+        document.getElementById('pieceHistoryId').value = '';
+    } else if (actionNumber === 3) {
         // Acción: Mover piezas
         movePiecesForm.style.display = 'block';
         clearModalFormFields();
-    } else {
-        movePiecesForm.style.display = 'none';
     }
 
     // Guardar número de acción actual
@@ -225,7 +238,37 @@ function handleModalExecute() {
     const actionNumber = window.currentModalAction;
     const modalResult = document.getElementById('modalResult');
 
-    if (actionNumber === 3) {
+    if (actionNumber === 1) {
+        // Acción: Eliminar caja
+        const batchId = document.getElementById('batchId').value.trim();
+
+        if (!batchId) {
+            modalResult.textContent = '❌ ERROR: Debes ingresar un ID de caja';
+            modalResult.style.display = 'block';
+            return;
+        }
+
+        // Simular eliminación
+        const result = `✓ Caja eliminada exitosamente\n\nID de caja eliminada: ${batchId}\n\nLa caja ha sido removida del sistema.`;
+        modalResult.textContent = result;
+        modalResult.style.display = 'block';
+
+    } else if (actionNumber === 2) {
+        // Acción: Borrar historial
+        const pieceId = document.getElementById('pieceHistoryId').value.trim();
+
+        if (!pieceId) {
+            modalResult.textContent = '❌ ERROR: Debes ingresar un ID de pieza';
+            modalResult.style.display = 'block';
+            return;
+        }
+
+        // Simular borrado de historial
+        const result = `✓ Historial borrado exitosamente\n\nID de pieza: ${pieceId}\n\nTodos los registros de esta pieza han sido eliminados.`;
+        modalResult.textContent = result;
+        modalResult.style.display = 'block';
+
+    } else if (actionNumber === 3) {
         // Acción: Mover piezas - procesar formulario
         const originalOrder = parseInt(document.getElementById('originalOrder').value);
         const pieceId = parseInt(document.getElementById('pieceId').value);

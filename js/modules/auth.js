@@ -32,17 +32,17 @@ const AuthModule = {
         // VALIDACIÓN 2: Determinar tipo de usuario
         let userType = null;
 
-        if (cleanId.startsWith('1')) {
-            // ID comienza con 1 → CALIDAD
+        if (cleanId.startsWith('C')) {
+            // ID comienza con C → CALIDAD
             userType = 'CALIDAD';
-        } else if (cleanId.startsWith('2')) {
-            // ID comienza con 2 → PRODUCCIÓN
+        } else if (cleanId.startsWith('P')) {
+            // ID comienza con P → PRODUCCIÓN
             userType = 'PRODUCCIÓN';
         } else {
             // ID no válido
             return {
                 success: false,
-                message: 'ID no válido. Debe comenzar con "1" (CALIDAD) o "2" (PRODUCCIÓN)'
+                message: 'ID no válido. Debe comenzar con "C" (CALIDAD) o "P" (PRODUCCIÓN)'
             };
         }
 

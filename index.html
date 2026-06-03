@@ -21,7 +21,7 @@
                     type="text" 
                     id="userId" 
                     class="input-field"
-                    placeholder=""
+                    placeholder="Ej: C001 o P001"
                     maxlength="20"
                 >
             </div>
@@ -33,9 +33,9 @@
 
             <!-- Información de prueba -->
             <div class="info-box">
-                <strong>Id prueba:</strong><br>
-                1 (CALIDAD)<br>
-                2 (PRODUCCIÓN)
+                <strong>Credenciales de prueba:</strong><br>
+                • C001 (CALIDAD)<br>
+                • P001 (PRODUCCIÓN)
             </div>
         </div>
     </div>
@@ -91,6 +91,22 @@
             </div>
 
             <div class="modal-body">
+                <!-- Formulario para Eliminar Caja -->
+                <div id="deleteBatchForm" class="modal-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="batchId">ID de caja a eliminar:</label>
+                        <input type="text" id="batchId" class="input-field" placeholder="Ej: CAJA001">
+                    </div>
+                </div>
+
+                <!-- Formulario para Borrar Historial -->
+                <div id="deleteHistoryForm" class="modal-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="pieceHistoryId">ID de pieza:</label>
+                        <input type="text" id="pieceHistoryId" class="input-field" placeholder="Ej: PIEZA123">
+                    </div>
+                </div>
+
                 <!-- Formulario para Mover Piezas -->
                 <div id="movePiecesForm" class="modal-form" style="display: none;">
                     <div class="form-group">

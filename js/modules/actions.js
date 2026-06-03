@@ -47,8 +47,8 @@ const ActionsModule = {
     deleteBatch: function() {
         return {
             title: 'Eliminar caja',
-            requiresForm: false,
-            result: ' Caja eliminada exitosamente\n\nLa caja ha sido removida del sistema.'
+            requiresForm: true,
+            form: 'deleteBatchForm'
         };
     },
 
@@ -59,8 +59,8 @@ const ActionsModule = {
     deleteHistory: function() {
         return {
             title: 'Borrar historial de pieza',
-            requiresForm: false,
-            result: 'Historial borrado exitosamente\n\nTodos los registros de la pieza han sido eliminados.'
+            requiresForm: true,
+            form: 'deleteHistoryForm'
         };
     },
 
