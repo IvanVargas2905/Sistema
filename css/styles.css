@@ -1,0 +1,420 @@
+/* 
+   ESTILOS GENERALES
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 
+   SISTEMA DE VISTAS
+    */
+
+.view {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+}
+
+.view.active {
+    display: block;
+}
+
+/* 
+   FORMULARIO DE LOGIN
+   */
+
+.login-container {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* 
+   ELEMENTOS DE FORMULARIO
+*/
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #999;
+    background-color: #fafafa;
+}
+
+/* 
+   BOTONES
+ */
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: Arial, sans-serif;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Botón primario (verde) */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #4d4d4d;
+    /* background-color: #4CAF50; */
+    color: white;
+    font-size: 16px; 
+}
+
+.btn-primary:hover {
+    background-color: #4d4d4d;
+}
+
+/* Botón secundario (gris) */
+.btn-secondary {
+    background-color: #999;
+    color: white;
+    width: auto;
+}
+
+.btn-secondary:hover {
+    background-color: #777;
+}
+
+/* 
+   MENSAJES
+ */
+
+.error-message {
+    color: #d32f2f;
+    font-size: 13px;
+    margin-top: 15px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffebee;
+    border: 1px solid #ef5350;
+    border-radius: 3px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.info-box {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.info-box strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+/* 
+   PANEL PRINCIPAL
+ */
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    padding: 20px;
+    border-bottom: none;
+}
+
+.user-info {
+    font-size: 16px;
+    color: #333;
+}
+
+.user-info .label {
+    font-weight: bold;
+    color: #666;
+}
+
+.user-type {
+    font-weight: bold;
+    color: #4b4b4b;
+    /* color: #4CAF50; */
+}
+
+.panel-content {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    padding: 30px 20px;
+}
+
+/* 
+   GRID DE BOTONES
+ */
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.btn-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
+    background-color: #e8e8e8;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.2s, transform 0.1s;
+    text-align: center;
+    min-height: 80px;
+}
+
+.btn-option:hover {
+    background-color: #d0d0d0;
+}
+
+.btn-option:active {
+    transform: scale(0.98);
+}
+
+.option-number {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.option-text {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* 
+   MENSAJE DE ESTADO
+ */
+
+#statusMessage {
+    display: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+#statusMessage.show {
+    display: block;
+}
+
+#statusMessage.error {
+    background-color: #ffebee;
+    color: #d32f2f;
+    border-color: #ef5350;
+}
+
+#statusMessage.success {
+    background-color: #e8f5e9;
+    color: #4d4d4d;
+    border-color: #4d4d4d;
+}
+
+#statusMessage.info {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border-color: #64b5f6;
+}
+
+/*
+   MODAL
+ */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-form {
+    display: block;
+}
+
+.modal-result {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 15px;
+    font-size: 13px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #333;
+    font-family: monospace;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 10px;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.modal-footer .btn {
+    flex: 1;
+}
+
+/* 
+   RESPONSIVE
+ */
+
+@media (max-width: 600px) {
+    .buttons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .panel-header .btn {
+        width: 100%;
+    }
+
+    .login-container {
+        padding: 30px 20px;
+    }
+}
